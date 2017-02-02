@@ -1,0 +1,12 @@
+{
+    "name": "jeremy/docker-phpmyadmin-discovery",
+    "authors": [
+        {
+            "name": "jcrombez",
+            "email": "jeremy.crombez@kitpages.fr"
+        }
+    ],
+    "require": {
+        "docker-php/docker-php": "^1.24"
+    }
+}
