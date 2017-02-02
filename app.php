@@ -33,5 +33,3 @@ foreach ($containers as $container) {
         'AllowNoPassword' => false
     ];
 }
-
-var_dump($cfg);
