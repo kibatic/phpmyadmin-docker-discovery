@@ -1,6 +1,6 @@
 <?php
 
-require 'vendor/autoload.php';
+require __DIR__ . '/vendor/autoload.php';
 
 use Docker\Docker;
 
@@ -9,6 +9,8 @@ $docker = new Docker();
 $containers = $docker->getContainerManager()->findAll();
 $validImageNames = ['mariadb:.+', 'mysql:.+'];
 $cfg = [];
+
+$i = 1;
 
 function isDatabase($container, $validImageNames)
 {
@@ -31,12 +33,12 @@ foreach ($containers as $container) {
     $network = (array) $container->getNetworkSettings()->getNetworks();
     $ipAddress = array_shift($network)->getIpAddress();
 
-    $cfg['Servers'][] = [
-        'auth_type' => 'cookie',
+    $cfg['Servers'][$i] = [
         'host' => $ipAddress,
-        'verbose' => $containerName . ' (' . $ipAddress . ')',
+        'verbose' => $containerName,
         'connect_type' => 'tcp',
-        'compress' => false,
-        'AllowNoPassword' => false
+        'compress' => false
     ];
+
+    $i++;
 }
