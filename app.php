@@ -10,13 +10,20 @@ $containers = $docker->getContainerManager()->findAll();
 $validImageNames = ['mariadb:.+', 'mysql:.+'];
 $cfg = [];
 
-foreach ($containers as $container) {
+function isDatabase($container, $validImageNames)
+{
     foreach ($validImageNames as $validImageName) {
         if (preg_match('/' . $validImageName . '/', $container->getImage())) {
-            break;
+            return true;
         }
+    }
 
-        continue 2;
+    return false;
+}
+
+foreach ($containers as $container) {
+    if (!isDatabase($container, $validImageNames)) {
+      continue;
     }
 
     $containerName = str_replace('/', '', $container->getNames()[0]);
