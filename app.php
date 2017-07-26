@@ -7,7 +7,7 @@ $dockerDiscovery = new \Kibatic\DockerDiscovery\DockerDiscovery();
 $containers = $dockerDiscovery->discover(['mariadb:.+', 'mysql:.+']);
 
 $cfg = [];
-$i = 0;
+$i = 1;
 
 foreach ($containers as $container) {
     $cfg['Servers'][$i] = [
