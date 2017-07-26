@@ -10,11 +10,5 @@
   ],
   "require": {
     "kibatic/docker-discovery": "dev-master"
-  },
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "https://github.com/kibatic/docker-discovery"
-    }
-  ]
+  }
 }
