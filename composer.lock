@@ -497,12 +497,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kibatic/docker-discovery.git",
-                "reference": "aa017435ac2d8897e5f15e90e9d9a624507faf65"
+                "reference": "ed19fcc962c20b0b29b7fc8b853a94c3301ee4c5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kibatic/docker-discovery/zipball/aa017435ac2d8897e5f15e90e9d9a624507faf65",
-                "reference": "aa017435ac2d8897e5f15e90e9d9a624507faf65",
+                "url": "https://api.github.com/repos/kibatic/docker-discovery/zipball/ed19fcc962c20b0b29b7fc8b853a94c3301ee4c5",
+                "reference": "ed19fcc962c20b0b29b7fc8b853a94c3301ee4c5",
                 "shasum": ""
             },
             "require": {
@@ -528,7 +528,7 @@
                 "source": "https://github.com/kibatic/docker-discovery/tree/master",
                 "issues": "https://github.com/kibatic/docker-discovery/issues"
             },
-            "time": "2017-07-26 14:01:19"
+            "time": "2017-07-26 14:08:16"
         },
         {
             "name": "nikic/php-parser",
