@@ -1,12 +1,20 @@
 {
-    "name": "jeremy/docker-phpmyadmin-discovery",
-    "authors": [
-        {
-            "name": "jcrombez",
-            "email": "jeremy.crombez@kitpages.fr"
-        }
-    ],
-    "require": {
-        "docker-php/docker-php": "^1.24"
+  "name": "kibatic/docker-phpmyadmin-discovery",
+  "license": "MIT",
+  "type": "library",
+  "authors": [
+    {
+      "name": "jcrombez",
+      "email": "jeremy.crombez@kibatic.com"
     }
+  ],
+  "require": {
+    "kibatic/docker-discovery": "dev-master"
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/kibatic/docker-discovery"
+    }
+  ]
 }

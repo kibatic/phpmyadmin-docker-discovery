@@ -2,40 +2,17 @@
 
 require __DIR__ . '/vendor/autoload.php';
 
-use Docker\Docker;
+$dockerDiscovery = new \Kibatic\DockerDiscovery\DockerDiscovery();
 
-$docker = new Docker();
+$containers = $dockerDiscovery->discover(['mariadb:.+', 'mysql:.+']);
 
-$containers = $docker->getContainerManager()->findAll();
-$validImageNames = ['mariadb:.+', 'mysql:.+'];
 $cfg = [];
-
-$i = 1;
-
-function isDatabase($container, $validImageNames)
-{
-    foreach ($validImageNames as $validImageName) {
-        if (preg_match('/' . $validImageName . '/', $container->getImage())) {
-            return true;
-        }
-    }
-
-    return false;
-}
+$i = 0;
 
 foreach ($containers as $container) {
-    if (!isDatabase($container, $validImageNames)) {
-      continue;
-    }
-
-    $containerName = str_replace('/', '', $container->getNames()[0]);
-
-    $network = (array) $container->getNetworkSettings()->getNetworks();
-    $ipAddress = array_shift($network)->getIpAddress();
-
     $cfg['Servers'][$i] = [
-        'host' => $ipAddress,
-        'verbose' => $containerName,
+        'host' => $container['ip'],
+        'verbose' => $container['name'],
         'connect_type' => 'tcp',
         'compress' => false
     ];
