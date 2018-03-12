@@ -497,12 +497,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kibatic/docker-discovery.git",
-                "reference": "ed19fcc962c20b0b29b7fc8b853a94c3301ee4c5"
+                "reference": "4d2aa218834ef8780e024dfce96e3468cb80a3ff"
             },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/kibatic/docker-discovery/zipball/ed19fcc962c20b0b29b7fc8b853a94c3301ee4c5",
-                "reference": "ed19fcc962c20b0b29b7fc8b853a94c3301ee4c5",
+                "reference": "4d2aa218834ef8780e024dfce96e3468cb80a3ff",
                 "shasum": ""
             },
             "require": {
